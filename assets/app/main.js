@@ -13,6 +13,12 @@ document.querySelector('#push').onclick = function () {
             </button>
             </div>
         `;
+        let current_task = document.querySelectorAll('.delete');
+        for (let i = 0; i < current_task.length; i++) {
+            current_task[i].onclick = function () {
+                this.parentNode.remove();
+            }
+        }
         let tasks = document.querySelectorAll('.task');
         for (let i = 0; i < tasks.length; i++) {
             tasks[i].onclick = function () {

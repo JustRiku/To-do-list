@@ -28,3 +28,9 @@ for (let i = 0; i < tasks.length; i++) {
         this.classList.toggle('completed');
     }
 }
+let current_task = document.querySelectorAll('.delete');
+for (let i = 0; i < current_task.length; i++) {
+    current_task[i].onclick = function () {
+        this.parentNode.remove();
+    }
+}

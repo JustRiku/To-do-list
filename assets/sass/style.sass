@@ -3,68 +3,81 @@
     margin: 0
     box-sizing: border-box
 
-body
-    height: 100%
-    background-color: #f157ff
-    font-family: 'Poppins', sans-serif
+$gradient: -45deg, #2FD4ED, #ED4797, #ed875f, #A1205E
+$container: rgba(255, 255, 255, 0.075)
 
+body
+    height: 100vh
+    background: linear-gradient($gradient)
+    background-size: 400% 400%
+    animation: gradient 15s ease infinite
+    font-family: 'Poppins', sans-serif
+    
+::placeholder
+    color: #e7e7e7
 h1
     text-align: center
     color: #fff
     padding: 20px
-    font-size: 3em
+    font-size: 6em
 .container
-    // border: 2px solid white
     width: 40%
     min-width: 450px
-    position: absolute
-    transform: translate(-50%, -50%)
+    margin: 0 auto
     top: 50%
     left: 50%
     padding: 30px 40px
-
 #newtask
-    background-color: #fff
+    background-color: $container
     padding: 30px 20px
     border-radius: 5px
     box-shadow: 0 15px 30px rgba(0, 0, 0, 0.3)
     font-weight: 500
+    color: #fff
+
     input
         width: 70%
         height: 45px
         font-size: 15px
-        border: 2px solid #d1d3d4
+        background-color: $container
+        border: 2px solid #f0f0f0ab
         padding: 12px
-        color: #111
+        color: #fff
         position: relative
         border-radius: 5px
         font-family: 'Poppins', sans-serif
         &:focus
             outline: none
-            border-color: #ff3b3b
+            border-color: #ffffff
     button
         position: relative
         float: right
         width: 20%
         height: 45px
-        font-size: 16px
-        background-color: #ff3b3b
+        font-size: 16px 
+        background: linear-gradient($gradient)
+        background-size: 400% 400%
+        animation: gradient 15s ease infinite
         border: none
         color: #fff
         cursor: pointer
         border-radius: 5px
+        transition: .3s ease
+        &:hover
+            filter: brightness(1.5)
 
 #tasks
-    background-color: #fff
+    background-color: $container
     padding: 30px 20px
     margin-top: 60px
     border-radius: 10px
     box-shadow: 0 15px 30px rgba(0, 0, 0, 0.3)
     width: 100%
     position: relative
+    transition: .3s
 
 .task
-    background-color: #fff
+    background-color: $container
     height: 50px
     padding: 5px 10px
     margin-top: 10px
@@ -73,6 +86,11 @@ h1
     justify-content: space-between
     border-bottom: 2px solid #d1d3d4
     cursor: pointer
+    border-radius: 5px
+    transition: .3s ease
+    color: #fff
+    &:hover
+        background-color: #ffffff50
     span
         font-size: 15px
         font-weight: 400
@@ -84,7 +102,21 @@ h1
         border-radius: 5px
         border: none
         cursor: pointer
-        outline: none
+        outline: none 
+        background: linear-gradient($gradient)
+        background-size: 400% 400%
+        animation: gradient 15s ease infinite
+        transition: .3s ease
+        &:hover
+            filter: brightness(1.5)
 
 .completed
     text-decoration: line-through;
+
+@keyframes gradient 
+    0%
+        background-position: 0% 50%
+    50%
+        background-position: 100% 50%
+    100%
+        background-position: 0% 50%
